@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>About HydroJungle</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #eee5e5;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2 class="text-center mb-4"><strong>DropNDrip - Smart Laundry Solution</strong></h2>
+
+    <div class="section">
+        <h4>Problem Statement</h4>
+        <p>Busy professionals and immigrants in A-grade cities struggle with regular laundry due to time constraints, lack of access to machines, and expensive service options.</p>
+    </div>
+
+    <div class="section">
+        <h4>Solution</h4>
+        <p>HydroJungle offers an affordable, hygienic door-to-door laundry service with multiple offerings: wash & fold, wash & iron, dry cleaning, and ironing only—aimed at convenience and quality.</p>
+    </div>
+
+    <div class="section">
+        <h4>Services Offered</h4>
+        <ul>
+            <li>Wash & Fold: ₹60–₹80/kg</li>
+            <li>Wash & Iron: ₹90–₹120/kg</li>
+            <li>Dry Cleaning: ₹100–₹300/item</li>
+            <li>Ironing Only: ₹10–₹20/piece</li>
+            <li>Special Items: ₹100–₹200/item (bedsheets, curtains, etc.)</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h4>Workflow</h4>
+        <ol>
+            <li>Customer books via app or WhatsApp</li>
+            <li>Pickup partner collects clothes</li>
+            <li>Laundry processed at central facility</li>
+            <li>Delivery within 24–48 hours</li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <h4>Business Model</h4>
+        <ul>
+            <li>Subscription: ₹299 – ₹499/month (4 pickups)</li>
+            <li>Pay-as-you-go options available</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h4>Technology</h4>
+        <ul>
+            <li>Mobile App and WhatsApp booking</li>
+            <li>Digital weight tracking</li>
+            <li>Online payments (UPI, GPay, etc.)</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h4>Challenges</h4>
+        <ul>
+            <li>Ensuring timely delivery</li>
+            <li>Maintaining quality control</li>
+            <li>Managing item loss/damage</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h4>Add-on Services</h4>
+        <ul>
+            <li>Shoe/Bag Cleaning</li>
+            <li>Perfumed Clothing Delivery</li>
+            <li>Monthly Wardrobe Refresh</li>
+        </ul>
+    </div>
+
+   <div class="text-center mt-4">
+    <a href="{% url 'place_order' %}" class="btn btn-success">Place Order</a>
+    <a href="{% url 'login' %}" class="btn btn-danger">Logout</a>
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

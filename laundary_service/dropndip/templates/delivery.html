@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Delivery Info - HydroJungle</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    
+    <style>
+        body {
+            background-color: #21588f;
+        }
+        .delivery-container {
+            max-width: 500px;
+            margin: 80px auto;
+            background: rgb(227, 243, 245);
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .delivery-container h2 {
+            color: #48b963;
+            margin-bottom: 20px;
+        }
+        .delivery-container h3 {
+            font-weight: bold;
+            margin: 15px 0;
+            color: #343a40;
+        }
+        .delivery-container p {
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="delivery-container">
+    <h2>Thank you, {{ name }}!</h2>
+    <p>Your clothes will be delivered on:</p>
+    <h3>{{ delivery_date }}</h3>
+    <p><strong>Total Amount:</strong> ₹{{ total_amount }}</p>
+</div>
+<div class="text-center mt-4">
+    <a href="{% url 'app_details' %}" class="btn btn-success">View App Details</a>
+</div>
+    <div class="text-center mt-2">
+        <a href="{% url 'login' %}" class="btn btn-danger">Logout</a>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

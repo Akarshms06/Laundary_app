@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Place Order - HydroJungle</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #0b4da3;
+        }
+
+        .order-form {
+            max-width: 600px;
+            margin: 50px auto;
+            background: rgb(227, 243, 245);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .order-form h2 {
+            margin-bottom: 20px;
+        }
+
+        #total_amount {
+            font-size: 1.2rem;
+            color: #25b131;
+        }
+    </style>
+
+    <script>
+        function calculateTotal() {
+            const menCount = parseInt(document.getElementById('men_count').value) || 0;
+            const womenCount = parseInt(document.getElementById('women_count').value) || 0;
+            const total = (menCount * 50) + (womenCount * 70);
+            document.getElementById('total_amount').innerText = "Total Amount: ₹" + total;
+        }
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <div class="order-form">
+        <h2 class="text-center"><strong>DropNDrip - Wash & Iron</strong></h2>
+        <p class="text-center text-muted"><b>Men's Pair: ₹50 | Women's Pair: ₹70</b></p>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label>Your Name:</label>
+                <input type="text" name="name" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label>Men's Clothes Count:</label>
+                <input type="number" id="men_count" name="men_count" class="form-control" oninput="calculateTotal()" required>
+            </div>
+
+            <div class="form-group">
+                <label>Women's Clothes Count:</label>
+                <input type="number" id="women_count" name="women_count" class="form-control" oninput="calculateTotal()" required>
+            </div>
+
+            <div class="form-group">
+                <label>Pickup Date:</label>
+                <input type="datetime-local" name="pickup_date" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label>Contact Number:</label>
+                <input type="text" name="contact" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label>Address:</label>
+                <textarea name="address" class="form-control" rows="3" required></textarea>
+            </div>
+
+            <p id="total_amount"><strong>Total Amount: ₹0</strong></p>
+
+            <button type="submit" class="btn btn-success btn-block">Submit Order</button>
+        </form>
+
+        <div class="text-center mt-3">
+            <a href="{% url 'login' %}" class="btn btn-outline-danger btn-sm">Logout</a>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
